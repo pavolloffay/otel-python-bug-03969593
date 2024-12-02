@@ -1,5 +1,6 @@
 # OpenTelemetry Python instrumentation bug
 
+Reproducer for https://github.com/open-telemetry/opentelemetry-python-contrib/issues/3059
 
 ## Steps to reproduce locally
 
