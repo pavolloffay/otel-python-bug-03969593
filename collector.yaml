@@ -1,0 +1,29 @@
+apiVersion: opentelemetry.io/v1beta1
+kind: OpenTelemetryCollector
+metadata:
+  name: otel
+spec:
+  config:
+    exporters:
+      debug:
+        verbosity: detailed
+    receivers:
+      otlp:
+        protocols:
+          grpc: {}
+          http: {}
+    service:
+      pipelines:
+#        metrics:
+#          receivers:
+#            - otlp
+#          exporters:
+#            - debug
+        traces:
+          exporters:
+            - debug
+          receivers:
+            - otlp
+      telemetry:
+        metrics:
+          address: 0.0.0.0:8888
